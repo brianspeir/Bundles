@@ -4,9 +4,12 @@
 # Prompt for a password and extend the time stamp.
 sudo -v
 
-# Install Vagrant as a bundle.
-curl -L --create-dirs http://files.vagrantup.com/packages/476b19a9e5f499b5d0b9d4aba5c0b16ebe434311/Vagrant.dmg -o /tmp/Vagrant/bundle.dmg
-hdiutil attach /tmp/Vagrant/bundle.dmg
+# Version 1.1.0
+if [ "/Library/Bundles/Vagrant.bundle" = "/Library/Bundles/Vagrant.bundle" ];
+    then sudo rm -rf /Library/Bundles/Vagrant.bundleva
+fi
+curl -L "http://files.vagrantup.com/packages/194948999371e9aee391d13845a0bdeb27e51ac0/Vagrant.dmg" --create-dirs -o /tmp/Vagrant/Install.dmg
+hdiutil attach /tmp/Vagrant/Install.dmg
 sudo installer -pkg /Volumes/Vagrant/Vagrant.pkg -tgt /
 hdiutil detach /Volumes/Vagrant
 sudo mv /Applications/Vagrant /Library/Bundles/Vagrant.bundle
