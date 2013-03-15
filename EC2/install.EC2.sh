@@ -14,3 +14,4 @@ rm -rf /tmp/EC2/
 
 # Invalidate the user time stamp and require passwords again.
 sudo -k
+exit
