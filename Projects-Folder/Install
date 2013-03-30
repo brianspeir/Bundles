@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+
+# -------------------------------------------------------------------------- #
+# Projects                                                                   #
+# -------------------------------------------------------------------------- #
+
+curl sudo curl https://raw.github.com/BrianSpeir/Bundles/master/Projects-Folder/Resources/Folder.zip -o /tmp/Projects-Folder/Install.zip
+tar -xfk /tmp/Projects-Folder/Install.zip -C $HOME/
+chown 501:staff $HOME/Projects
+chmod 700 $HOME/Projects
+rm -rf /tmp/Projects-Folder/
