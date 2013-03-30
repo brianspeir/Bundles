@@ -5,7 +5,7 @@
 # Projects                                                                   #
 # -------------------------------------------------------------------------- #
 
-curl sudo curl https://github.com/BrianSpeir/Bundles/raw/master/Projects-Folder/Resources/Folder.zip --create-dirs -o /tmp/Projects-Folder/Install.zip
+sudo curl https://github.com/BrianSpeir/Bundles/raw/master/Projects-Folder/Resources/Folder.zip --create-dirs -o /tmp/Projects-Folder/Install.zip
 tar -xfk /tmp/Projects-Folder/Install.zip -C $HOME/
 chown 501:staff $HOME/Projects
 chmod 700 $HOME/Projects
