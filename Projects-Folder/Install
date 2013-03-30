@@ -7,6 +7,4 @@
 
 curl -L https://github.com/BrianSpeir/Bundles/raw/master/Projects-Folder/Resources/Folder.zip --create-dirs -o /tmp/Projects-Folder/Folder.zip
 ditto -xk /tmp/Projects-Folder/Folder.zip $HOME/
-chown 501:staff $HOME/Projects
-chmod 700 $HOME/Projects
 rm -rf /tmp/Projects-Folder/
