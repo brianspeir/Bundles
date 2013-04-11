@@ -13,8 +13,8 @@ easy_install pip
 sudo rm /tmp/*.gz
 sudo rm /tmp/*.py
 
-# Upgrade apt-get
-sudo apt-get upgrade
+# Update apt-get
+sudo apt-get update
 
 # Install requirements
 sudo pip install -r /Projects/$PROJECT_NAME/requirements.txt
