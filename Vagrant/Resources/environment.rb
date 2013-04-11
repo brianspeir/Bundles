@@ -302,13 +302,15 @@ module Vagrant
         @config_loader.load([:default, :home, :root, vm_config_key])
 
       box = nil
-      begin
-        box = boxes.find(config.vm.box, provider)
-      rescue Errors::BoxUpgradeRequired
-        # Upgrade the box if we must
-        @logger.info("Upgrading box during config load: #{config.vm.box}")
-        boxes.upgrade(config.vm.box)
-        retry
+      if config.vm.box
+        begin
+          box = boxes.find(config.vm.box, provider)
+        rescue Errors::BoxUpgradeRequired
+          # Upgrade the box if we must
+          @logger.info("Upgrading box during config load: #{config.vm.box}")
+          boxes.upgrade(config.vm.box)
+          retry
+        end
       end
 
       # If a box was found, then we attempt to load the Vagrantfile for
@@ -635,6 +637,16 @@ module Vagrant
       # that Rubygems knows about.
       ENV["GEM_PATH"] = "#{@gems_path}#{::File::PATH_SEPARATOR}#{ENV["GEM_PATH"]}"
       ::Gem.clear_paths
+
+      # If we're in a Bundler environment, don't load plugins. This only
+      # happens in plugin development environments.
+      if defined?(Bundler)
+        require 'bundler/shared_helpers'
+        if Bundler::SharedHelpers.in_bundle?
+          @logger.warn("In a bundler environment, not loading environment plugins!")
+          return
+        end
+      end
 
       # Load the plugins
       plugins_json_file = @home_path.join("plugins.json")
