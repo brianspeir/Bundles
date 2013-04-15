@@ -22,6 +22,9 @@ VBoxManage setproperty machinefolder $HOME/Library/VirtualBox/Machines
 # Vagrant                                                                    #
 # -------------------------------------------------------------------------- #
 
+# Prompt for a password and extend the time stamp.
+sudo -v
+
 # Check for existing version.
 APP="/Library/Bundles/Vagrant.bundle"
 if [ "$APP" == "$APP" ]; then
