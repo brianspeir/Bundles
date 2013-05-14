@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+
+# Prompt for a password and extend the time stamp.
+sudo -v
+
+# -------------------------------------------------------------------------- #
+# SourceTree                                                                 #
+# -------------------------------------------------------------------------- #
+
+# Check for existing version.
+APP="/Applications/SourceTree.app"
+if [ "$APP" == "$APP" ]; then
+    sudo rm -rf "$APP"
+fi
+
+# Version 1.6.0.1
+curl -L "http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.0.1.dmg" --create-dirs -o /tmp/SourceTree/Install.dmg
+hdiutil attach /tmp/SourceTree/Install.dmg
+sudo cp -R /Volumes/SourceTree/SourceTree.app /Applications/
+hdiutil detach /Volumes/SourceTree
+rm -rf /tmp/SourceTree/
