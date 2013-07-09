@@ -5,12 +5,12 @@
 sudo -v
 
 # -------------------------------------------------------------------------- #
-# SourceTree (version 1.6.2.2)                                               #
+# LibreOffice (version 4.0.4)                                                #
 # -------------------------------------------------------------------------- #
 
-APP="SourceTree"
+APP="LibreOffice"
 INSTALL_PATH="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.2.2.dmg"
+SOURCE="http://download.documentfoundation.org/libreoffice/stable/4.0.4/mac/x86/LibreOffice_4.0.4_MacOS_x86.dmg"
 
 # Check for existing installation.
 if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then

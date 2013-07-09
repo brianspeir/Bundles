@@ -5,21 +5,23 @@
 sudo -v
 
 # -------------------------------------------------------------------------- #
-# SourceTree (version 1.6.2.2)                                               #
+# Wacom (version 6.3.6w.3 (2013-Jun-18))                                     #
 # -------------------------------------------------------------------------- #
 
-APP="SourceTree"
+APP="Wacom"
 INSTALL_PATH="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.2.2.dmg"
+SOURCE="http://cdn.wacom.com/U/drivers/mac/pro/WacomTablet_6.3.6w3.dmg"
 
 # Check for existing installation.
 if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
     sudo rm -rf "$INSTALL_PATH/$APP*"
 fi
 
-# Install.
+# Version
 curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.dmg
 hdiutil attach /tmp/"$APP"/Install.dmg
-sudo cp -R /Volumes/"$APP"*/*.app $INSTALL_PATH/
+sudo installer -pkg /Volumes/"$APP"*/*.pkg -tgt /
 hdiutil detach /Volumes/"$APP"*
+sudo mv /Applications/Wacom\ Tablet.localized/Wacom\ Tablet\ Utility.app /Applications/Utilities/Wacom\ Tablet\ Utility.app
+sudo rm -rf /Applications/Wacom\ Tablet.localized/
 rm -rf /tmp/"$APP"/

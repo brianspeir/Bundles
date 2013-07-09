@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+
+# Prompt for a password and extend the time stamp.
+sudo -v
+
+# -------------------------------------------------------------------------- #
+# EC2 (version 1.6.8)                                                        #
+# -------------------------------------------------------------------------- #
+
+APP="EC2"
+INSTALL_PATH="/Library/Bundles"
+SOURCE="http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip"
+
+# Check for existing version.
+if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
+    sudo rm -rf "$INSTALL_PATH/$APP*"
+fi
+
+# Install.
+sudo curl https://raw.github.com/BrianSpeir/Bundles/master/"$APP"/Resources/Info.plist --create-dirs -o "$INSTALL_PATH/$APP.bundle/Info.plist"
+curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.zip
+sudo tar -xf /tmp/"$APP"/Install.zip --strip-components 1 -C "$INSTALL_PATH/$APP.bundle/"
+sudo chmod -R 755 "$INSTALL_PATH/$APP.bundle"
+rm -rf /tmp/"$APP"/
+
+# Setup for the Amazon EC2 Command-Line Tools.
+curl https://raw.github.com/BrianSpeir/Dot-Files/master/"$APP".profile --create-dirs -o "$HOME/Library/Application Support/AWS/$APP.profile"
+

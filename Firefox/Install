@@ -5,12 +5,12 @@
 sudo -v
 
 # -------------------------------------------------------------------------- #
-# SourceTree (version 1.6.2.2)                                               #
+# Firefox (version 22.0.0)                                                   #
 # -------------------------------------------------------------------------- #
 
-APP="SourceTree"
+APP="Firefox"
 INSTALL_PATH="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.2.2.dmg"
+SOURCE="http://download.mozilla.org/?product=firefox-22.0&os=osx&lang=en-US"
 
 # Check for existing installation.
 if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then

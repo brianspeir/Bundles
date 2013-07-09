@@ -5,21 +5,15 @@
 sudo -v
 
 # -------------------------------------------------------------------------- #
-# SourceTree (version 1.6.2.2)                                               #
+# Command-Line Tools (April 2013)                                            #
 # -------------------------------------------------------------------------- #
 
-APP="SourceTree"
-INSTALL_PATH="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.2.2.dmg"
-
-# Check for existing installation.
-if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
-    sudo rm -rf "$INSTALL_PATH/$APP*"
-fi
+APP="Command"
+SOURCE="http://devimages.apple.com/downloads/xcode/command_line_tools_for_xcode_os_x_mountain_lion_april_2013.dmg"
 
 # Install.
 curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.dmg
 hdiutil attach /tmp/"$APP"/Install.dmg
-sudo cp -R /Volumes/"$APP"*/*.app $INSTALL_PATH/
+sudo installer -pkg /Volumes/"$APP"*/*.mpkg -tgt /
 hdiutil detach /Volumes/"$APP"*
 rm -rf /tmp/"$APP"/

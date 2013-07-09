@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+
+# Prompt for a password and extend the time stamp.
+sudo -v
+
+# -------------------------------------------------------------------------- #
+# Node (version 0.10.12)                                                     #
+# -------------------------------------------------------------------------- #
+
+APP="Node"
+SOURCE="http://nodejs.org/dist/v0.10.12/node-v0.10.12.pkg"
+
+# Install.
+curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.pkg
+sudo installer -pkg /tmp/"$APP"/Install.pkg -tgt /
+rm -rf /tmp/"$APP"/

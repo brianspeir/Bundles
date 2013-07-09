@@ -5,12 +5,12 @@
 sudo -v
 
 # -------------------------------------------------------------------------- #
-# SourceTree (version 1.6.2.2)                                               #
+# Chrome (version latest)                                                    #
 # -------------------------------------------------------------------------- #
 
-APP="SourceTree"
+APP="Google Chr"
 INSTALL_PATH="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.2.2.dmg"
+SOURCE="https://dl.google.com/chrome/mac/stable/GoogleChrome.dmg"
 
 # Check for existing installation.
 if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
@@ -23,3 +23,9 @@ hdiutil attach /tmp/"$APP"/Install.dmg
 sudo cp -R /Volumes/"$APP"*/*.app $INSTALL_PATH/
 hdiutil detach /Volumes/"$APP"*
 rm -rf /tmp/"$APP"/
+
+
+# Opinions
+# sudo mv $INSTALL_PATH"$APP"* $INChrome.app
+sudo /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName Chrome" $INSTALL_PATH/Google\ Chrome.app/Contents/Resources/en.lproj/InfoPlist.strings
+#sudo /usr/libexec/PlistBuddy -c "Set :CFBundleName Chrome" $INSTALL_PATH/Google\ Chrome.app/Contents/Resources/en.lproj/InfoPlist.strings

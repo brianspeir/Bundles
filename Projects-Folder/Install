@@ -1,10 +1,18 @@
 #!/bin/bash
 #
 
+# Prompt for a password and extend the time stamp.
+sudo -v
+
 # -------------------------------------------------------------------------- #
-# Projects                                                                   #
+# Projects Folder (version 1.0.0)                                            #
 # -------------------------------------------------------------------------- #
 
-curl -L https://github.com/BrianSpeir/Bundles/raw/master/Projects-Folder/Resources/Folder.zip --create-dirs -o /tmp/Projects-Folder/Folder.zip
-ditto -xk /tmp/Projects-Folder/Folder.zip $HOME/
-rm -rf /tmp/Projects-Folder/
+APP="Projects-Folder"
+INSTALL_PATH="$HOME"
+SOURCE="https://github.com/BrianSpeir/Bundles/raw/master/Projects-Folder/Resources/Folder.zip"
+
+# Install.
+curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.zip
+ditto -xk /tmp/"$APP"/Install.zip $INSTALL_PATH/
+rm -rf /tmp/"$APP"/

@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+
+# Prompt for a password and extend the time stamp.
+sudo -v
+
+# -------------------------------------------------------------------------- #
+# Sublime Text (version 2.0.1 (build 2217))                                  #
+# -------------------------------------------------------------------------- #
+
+APP="Sublime"
+INSTALL_PATH="/Applications"
+SOURCE="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg"
+
+# Check for existing installation.
+if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
+    sudo rm -rf "$INSTALL_PATH/$APP*"
+fi
+
+# Install.
+curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.dmg
+hdiutil attach /tmp/"$APP"/Install.dmg
+sudo cp -R /Volumes/"$APP"*/*.app $INSTALL_PATH/
+hdiutil detach /Volumes/"$APP"*
+rm -rf /tmp/"$APP"/
+
+
+# Sublime Text Package Control (verion latest) ----------------------------- #
+
+APP="PackageControl"
+SOURCE="https://github.com/wbond/sublime_package_control/archive/master.zip"
+
+# Install.
+curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.zip
+mkdir $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/Package\ Control
+tar -xf /tmp/"$APP"/Install.zip --strip-components 1 --exclude='.gitignore' --exclude='readme.*' --exclude='example*' -C $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/Package\ Control/

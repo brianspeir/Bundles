@@ -5,12 +5,12 @@
 sudo -v
 
 # -------------------------------------------------------------------------- #
-# SourceTree (version 1.6.2.2)                                               #
+# Messages (proof of concept)                                                #
 # -------------------------------------------------------------------------- #
 
-APP="SourceTree"
-INSTALL_PATH="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.6.2.2.dmg"
+APP="IRC"
+INSTALL_PATH="/Library/Messages/PlugIns"
+SOURCE="http://cdn.juicycocktail.com/download/IRC.imserviceplugin.zip"
 
 # Check for existing installation.
 if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
@@ -18,8 +18,6 @@ if [ "$INSTALL_PATH/$APP*" == "$INSTALL_PATH/$APP*" ]; then
 fi
 
 # Install.
-curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.dmg
-hdiutil attach /tmp/"$APP"/Install.dmg
-sudo cp -R /Volumes/"$APP"*/*.app $INSTALL_PATH/
-hdiutil detach /Volumes/"$APP"*
+curl -L $SOURCE --create-dirs -o /tmp/"$APP"/Install.zip
+sudo tar -xf /tmp/"$APP"/Install.zip -C $INSTALL_PATH/
 rm -rf /tmp/"$APP"/
