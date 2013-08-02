@@ -1,27 +1,16 @@
 Bundles
 =======
 
-Making the Mac prettier one bundle at a time. All your folders belong to me.
+Making the Mac prettier one bundle at a time.
 
 Bundles ease the installation of apps and insure installations conform to
 paradigms set forth on the Mac platform.
 
-It does its best job to conform linux installations to a Mac version of XDG
-directories.
-
-Only gui apps appear under Applications. Others are installed to make
-uninstallation easy.
-
-Bundles attempt to focus on the installation as opposed to the configuration
-of apps.
-
-Bundles attempt to be single files with no outside dependancies.
-
 Copy, Paste and Install from the command-line.
 
-Standard installers made better.
-
 curl -s https://raw.github.com/brianspeir/Bundles/master/[name].install | bash
+
+Standard installers made better.
 
 Chrome
 ------
