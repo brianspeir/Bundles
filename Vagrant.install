@@ -1,0 +1,113 @@
+#!/bin/bash
+#
+
+# Vagrant.install v4.2.16
+# This bundle installs Virtualbox and Vagrant.
+# http://www.brianspeir.com
+#
+# Copyright (C) 2013 Brian Speir. All rights reserved.
+#
+# Licensed under The BSD 3-Clause License. You may not use this file except
+# in compliance with the License. You may obtain a copy of the License at
+# http://opensource.org/licenses/BSD-3-Clause
+
+
+# Prompt for a password and extend the time stamp.
+sudo -v
+
+# -------------------------------------------------------------------------- #
+# VirtualBox (version 4.2.16)                                                #
+# -------------------------------------------------------------------------- #
+
+# Set installation variables.
+SOURCE="http://download.virtualbox.org/virtualbox/4.2.16/VirtualBox-4.2.16-86992-OSX.dmg"
+
+# Install.
+echo "Downloading..."
+curl -L# "$SOURCE" -o ${TMPFILE=$(mktemp -t tmp)}
+echo "Installing..."
+hdiutil attach "$TMPFILE" -nobrowse -quiet -mountpoint ${TMPVOL=/Volumes/$(basename $TMPFILE)}
+sudo installer -pkg "$TMPVOL"/*.pkg -tgt /
+hdiutil detach -quiet "$TMPVOL"
+rm "$TMPFILE"
+
+# Set the default location for the VMs
+VBoxManage setproperty machinefolder $HOME/Library/VirtualBox/Machines
+
+
+# -------------------------------------------------------------------------- #
+# Vagrant (version 1.2.7)                                                    #
+# -------------------------------------------------------------------------- #
+
+# Prompt for a password and extend the time stamp.
+sudo -v
+
+# Set installation variables.
+NAME="Vagrant.bundle"
+WHERE="/Library/Bundles"
+SOURCE="http://files.vagrantup.com/packages/7ec0ee1d00a916f80b109a298bab08e391945243/Vagrant-1.2.7.dmg"
+
+# Remove existing installation.
+if [ -s "$WHERE/$NAME" ]; then
+    sudo rm -rf "$WHERE"/"$NAME"
+fi
+
+# Install.
+echo "Downloading..."
+curl -L# "$SOURCE" -o ${TMPFILE=$(mktemp -t tmp)}
+echo "Installing..."
+hdiutil attach "$TMPFILE" -nobrowse -quiet -mountpoint ${TMPVOL=/Volumes/$(basename $TMPFILE)}
+sudo installer -pkg "$TMPVOL"/*.pkg -tgt /
+hdiutil detach -quiet "$TMPVOL"
+rm "$TMPFILE"
+sudo mv /Applications/Vagrant "$WHERE"/"$NAME"/Contents/MacOS
+sudo ln -sf "$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant
+sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleExecutable</key>
+    <string>vagrant</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.vagrantup.Vagrant</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>Vagrant</string>
+    <key>CFBundlePackageType</key>
+    <string>BNDL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.2.7</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2010-2013 Mitchell Hashimoto.</string>
+</dict>
+</plist>
+EOF
+sudo chmod -R 755 "$WHERE"/"$NAME"
+
+# Modify default_home_path to better suite Mac OS.
+export VAGRANT_HOME="$HOME/Library/Application Support/Vagrant"
+mkdir -p "$HOME/Library/Preferences/Vagrant" &>/dev/null
+chmod 700 "$HOME/Library/Preferences/Vagrant"
+cat > "$HOME/Library/Preferences/Vagrant/profile" <<'EOF'
+# Modify default_home_path to better suite Mac OS.
+export VAGRANT_HOME="$HOME/Library/Application Support/Vagrant"
+export GEM_PATH="$HOME/Library/Application Support/Vagrant/gems"
+EOF
+
+# Export the profile to sources.
+if [ -r "$HOME/Library/Preferences/Shell/sources" ]; then
+    echo '. "$HOME/Library/Preferences/Vagrant/profile"' >> "$HOME/Library/Preferences/Shell/sources"
+    sort -uo "$HOME/Library/Preferences/Shell/sources" "$HOME/Library/Preferences/Shell/sources"
+fi
+
+# Install plug-ins
+vagrant plugin install vagrant-aws
+vagrant plugin install vagrant-rackspace
+
+echo "Finished."
