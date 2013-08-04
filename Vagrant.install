@@ -31,9 +31,6 @@ sudo installer -pkg "$TMPVOL"/*.pkg -tgt /
 hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
 
-# Set the default location for the VMs
-VBoxManage setproperty machinefolder $HOME/Library/VirtualBox/Machines
-
 
 # -------------------------------------------------------------------------- #
 # Vagrant (version 1.2.7)                                                    #
@@ -60,6 +57,7 @@ hdiutil attach "$TMPFILE" -nobrowse -quiet -mountpoint ${TMPVOL=/Volumes/$(basen
 sudo installer -pkg "$TMPVOL"/*.pkg -tgt /
 hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
+sudo mkdir -p "$WHERE"/"$NAME"/Contents/MacOS
 sudo mv /Applications/Vagrant "$WHERE"/"$NAME"/Contents/MacOS
 sudo ln -sf "$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant
 sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
@@ -89,22 +87,6 @@ sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
 </plist>
 EOF
 sudo chmod -R 755 "$WHERE"/"$NAME"
-
-# Modify default_home_path to better suite Mac OS.
-export VAGRANT_HOME="$HOME/Library/Application Support/Vagrant"
-mkdir -p "$HOME/Library/Preferences/Vagrant" &>/dev/null
-chmod 700 "$HOME/Library/Preferences/Vagrant"
-cat > "$HOME/Library/Preferences/Vagrant/profile" <<'EOF'
-# Modify default_home_path to better suite Mac OS.
-export VAGRANT_HOME="$HOME/Library/Application Support/Vagrant"
-export GEM_PATH="$HOME/Library/Application Support/Vagrant/gems"
-EOF
-
-# Export the profile to sources.
-if [ -r "$HOME/Library/Preferences/Shell/sources" ]; then
-    echo '. "$HOME/Library/Preferences/Vagrant/profile"' >> "$HOME/Library/Preferences/Shell/sources"
-    sort -uo "$HOME/Library/Preferences/Shell/sources" "$HOME/Library/Preferences/Shell/sources"
-fi
 
 # Install plug-ins
 vagrant plugin install vagrant-aws
