@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-# Firefox.install v22.0.0
+# Firefox.install v23.0.0
 # This bundle installs Firefox for Mac.
 # http://www.brianspeir.com
 #
@@ -18,7 +18,7 @@ sudo -v
 # Set installation variables.
 NAME="Firefox.app"
 WHERE="/Applications"
-SOURCE="http://download.mozilla.org/?product=firefox-22.0&os=osx&lang=en-US"
+SOURCE="https://download.mozilla.org/?product=firefox-23.0&os=osx&lang=en-US"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then
