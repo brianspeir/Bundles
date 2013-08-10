@@ -28,6 +28,7 @@ hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
 
 # Accept Xcode End User Licensing Agreement.
-sudo /usr/bin/xcodebuild -license && echo -e "\nXcode license agreements agreed to system-wide "
+default writes com.apple.dt.Xcode IDELastGMLicenseAgreedTo -string "EA0720"
+default writes com.apple.dt.Xcode IDEXcodeVersionForAgreedToGMLicense -string "4.6.3"
 
 echo "Finished."
