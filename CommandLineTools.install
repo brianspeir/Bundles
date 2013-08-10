@@ -28,6 +28,6 @@ hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
 
 # Accept Xcode End User Licensing Agreement.
-sudo xcodebuild -license && echo -e "\nXcode license agreements agreed to system-wide "
+sudo /usr/bin/xcodebuild -license && echo -e "\nXcode license agreements agreed to system-wide "
 
 echo "Finished."

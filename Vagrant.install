@@ -89,7 +89,7 @@ EOF
 sudo chmod -R 755 "$WHERE"/"$NAME"
 
 # Install plug-ins
-vagrant plugin install vagrant-aws
-vagrant plugin install vagrant-rackspace
+"$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant plugin install vagrant-aws
+"$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant plugin install vagrant-rackspace
 
 echo "Finished."
