@@ -47,7 +47,7 @@ if [ -s "$WHERE/$NAME" ]; then
 fi
 
 # Install.
-curl -L# "$SOURCE" -o "$WHERE"/"$NAME"
+curl -L# "$SOURCE" --create-dirs -o "$WHERE"/"$NAME"
 
 # Other -------------------------------------------------------------------- #
 
@@ -55,10 +55,11 @@ curl -L# "$SOURCE" -o "$WHERE"/"$NAME"
 # git clone https://github.com/BrianSpeir/Dot-Files/Crayons.tmTheme "$HOME/Library/Application Support/Sublime Text 2/Packages/User/"
 
 # Install Soda Theme colours (replace with personal colors)
+mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
 curl -L# https://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip | \
     tar -xz --exclude="Monokai Soda.tmTheme" -C $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 
 # Fix Ruby sytax to recognize Vagrantfile
-/usr/libexec/PlistBuddy -c "Add :fileTypes: string Vagrantfile" $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/Ruby/Ruby.tmLanguage
+/usr/libexec/PlistBuddy -c "Add :fileTypes: string Vagrantfile" $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/Ruby/Ruby.tmLanguage &>/dev/null
 
 echo "Finished."

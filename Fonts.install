@@ -15,7 +15,7 @@
 # Source Code Pro v1.017 --------------------------------------------------- #
 
 # Set installation variables.
-WHERE="$HOME/Library/Test/Fonts"
+WHERE="$HOME/Library/Fonts"
 SOURCE="https://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip"
 
 # Install.

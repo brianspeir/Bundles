@@ -37,6 +37,6 @@ rm "$TMPFILE"
 # Opinions ----------------------------------------------------------------- #
 
 # Change display name to "Chrome"
-sudo /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName Chrome" "$WHERE"/"$NAME"/Contents/Resources/en.lproj/InfoPlist.string
+sudo /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName Chrome" "$WHERE"/"$NAME"/Contents/Resources/en.lproj/InfoPlist.strings
 
 echo "Finished."
