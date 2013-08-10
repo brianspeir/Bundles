@@ -8,7 +8,7 @@ paradigms set forth on the Mac platform.
 
 Copy, Paste and Install from the command-line.
 
-curl -s https://raw.github.com/brianspeir/Bundles/master/[name].install | bash
+bash <(curl -s https://raw.github.com/brianspeir/Bundles/master/[name].install)
 
 Standard installers made better.
 
