@@ -57,7 +57,7 @@ hdiutil attach "$TMPFILE" -nobrowse -quiet -mountpoint ${TMPVOL=/Volumes/$(basen
 sudo installer -pkg "$TMPVOL"/*.pkg -tgt /
 hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
-sudo mkdir -p "$WHERE"/"$NAME"/Contents/MacOS
+sudo mkdir -p "$WHERE"/"$NAME"/Contents
 sudo mv /Applications/Vagrant "$WHERE"/"$NAME"/Contents/MacOS
 sudo ln -sf "$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant
 sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
@@ -89,7 +89,7 @@ EOF
 sudo chmod -R 755 "$WHERE"/"$NAME"
 
 # Install plug-ins
-"$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant plugin install vagrant-aws
-"$WHERE"/"$NAME"/Contents/MacOS/bin/vagrant /usr/bin/vagrant plugin install vagrant-rackspace
+vagrant plugin install vagrant-aws
+vagrant plugin install vagrant-rackspace
 
 echo "Finished."
