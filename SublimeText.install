@@ -34,10 +34,6 @@ sudo cp -R "$TMPVOL"/"$NAME" "$WHERE"/
 hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
 
-# Setup defaults to prevent overwrites.
-open "/Applications/Sublime Text 2.app"
-killall "Sublime Text 2"
-
 # Sublime Text Package Control --------------------------------------------- #
 
 # Set installation variables.
