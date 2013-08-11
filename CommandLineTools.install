@@ -28,7 +28,7 @@ hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
 
 # Accept Xcode End User Licensing Agreement.
-default writes com.apple.dt.Xcode IDELastGMLicenseAgreedTo -string "EA0720"
-default writes com.apple.dt.Xcode IDEXcodeVersionForAgreedToGMLicense -string "4.6.3"
+defaults write com.apple.dt.Xcode IDELastGMLicenseAgreedTo -string "EA0720"
+defaults write com.apple.dt.Xcode IDEXcodeVersionForAgreedToGMLicense -string "4.6.3"
 
 echo "Finished."
