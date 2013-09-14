@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-# Wacom.install v6.3.6w.3 (2013-Jun-18)
+# Wacom.install v6.3.6.4 (2013-Sep-03)
 # This bundle installs Wacom drivers for Mac.
 # http://www.brianspeir.com
 #
@@ -18,7 +18,7 @@ sudo -v
 # Set installation variables.
 NAME="Wacom Tablet Utility.app"
 WHERE="/Applications/Utilities"
-SOURCE="http://cdn.wacom.com/U/drivers/mac/pro/WacomTablet_6.3.6w3.dmg"
+SOURCE="http://cdn.wacom.com/U/drivers/mac/pro/WacomTablet_6.3.6-4.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then
