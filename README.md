@@ -8,61 +8,56 @@ paradigms set forth on the Mac platform.
 
 Copy, Paste and Install from the command-line.
 
+```bash
 bash <(curl -s https://raw.github.com/brianspeir/Bundles/master/[name].install)
+```
 
 Standard installers made better.
 
-Chrome
-------
+#### Chrome
 
 We all know Google makes Chrome. This installation eliminates the Google brand from the application name. Go Apple.
 
-Command-Line Tools
-------------------
+#### Command-Line Tools
 
 Some of us don't need all of Xcode. This one's for you.
 
-EC2 Tools
----------
+#### EC2 Tools
 
 A somewhat stlylized installation of EC2 command-line tools. Don't forget Java for that new Mac of yours.
 
-Firefox
--------
+#### Firefox
 
 Mozilla does it right. This does it better. Install a browser without a browser.
 
-IRC
----
+#### IRC
 
 One less app. One more way to communicate.
 
-LibreOffice
------------
+#### LibreOffice
 
 Fuck Microsoft Office.
 
-Projects Folder
----------------
+#### MacPorts
+
+Live in isolation.
+
+#### Projects Folder
 
 If you hate generic folders you'll love this. A custom folder for all your projects.
 
-SourceTree
-----------
+#### SourceTree
 
 For all those who just don't like version control from the command-line. And for those who keep fucking their projects up using version control from the command-line.
 
-Sublime Text
-------------
+#### Sublime Text
 
 Enough said.
 
-Vagrant and Virtualbox
-----------------------
+#### Vagrant and Virtualbox
 
 A match made in heaven. And and installer to keep them together.
 
-Wacome
-------
+#### Wacome
 
 The next best thing to pencil and paper.
