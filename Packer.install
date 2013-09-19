@@ -35,7 +35,7 @@ sudo mkdir -p "$WHERE"/"$NAME"/Contents/MacOS
 echo "Downloading..."
 curl -L# "$SOURCE" | sudo tar -xz --strip-components 1 -C "$WHERE"/"$NAME"/Contents/MacOS
 echo "Installing..."
-sudo bash -c "cat > /Library/Bundles/EC2.bundle/Contents/Info.plist" <<'EOF'
+sudo bash -c "cat > /Library/Bundles/Packer.bundle/Contents/Info.plist" <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -65,7 +65,7 @@ sudo chmod -R 755 "$WHERE"/"$NAME"
 
 # Tell the tools where they live. Path setting for all users.
 sudo bash -c "cat > /etc/paths.d/io.packer.Packer" <<'EOF'
-/Library/Bundles/Packer.bundle/Contents/MacOS/bin
+/Library/Bundles/Packer.bundle/Contents/MacOS
 EOF
 
 echo "Finished."
