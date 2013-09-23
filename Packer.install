@@ -33,7 +33,7 @@ fi
 # Install.
 sudo mkdir -p "$WHERE"/"$NAME"/Contents/MacOS
 echo "Downloading..."
-curl -L# "$SOURCE" | sudo tar -xz --strip-components 1 -C "$WHERE"/"$NAME"/Contents/MacOS
+curl -L# "$SOURCE" | sudo tar -xz -C "$WHERE"/"$NAME"/Contents/MacOS
 echo "Installing..."
 sudo bash -c "cat > /Library/Bundles/Packer.bundle/Contents/Info.plist" <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
