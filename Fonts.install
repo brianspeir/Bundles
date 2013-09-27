@@ -33,7 +33,7 @@ echo "Finished."
 
 # Set installation variables.
 WHERE="$HOME/Library/Fonts"
-SOURCE="https://sourceforge.net/projects/sourcecodepro.adobe/SourceSansPro_FontsOnly-1.050.zip/download"
+SOURCE="https://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceSansPro_FontsOnly-1.050.zip"
 
 # Install.
 echo "Downloading..."
