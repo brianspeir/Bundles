@@ -20,7 +20,7 @@
 
 # Set installation variables.
 WHERE="$HOME/Library/Fonts"
-SOURCE="http://sourceforge.net/projects/sourcesans.adobe/files/SourceCodePro_FontsOnly-1.017.zip/download"
+SOURCE="http://sourceforge.net/projects/sourcecodepro.adobe/files/SourceCodePro_FontsOnly-1.017.zip/download"
 
 # Install.
 echo "Downloading..."
