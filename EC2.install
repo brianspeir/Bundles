@@ -63,4 +63,5 @@ sudo bash -c "cat > /etc/paths.d/com.amazon.aws.EC2" <<'EOF'
 /Library/Bundles/EC2.bundle/Contents/MacOS/bin
 EOF
 
+ec2-version
 echo "Finished."
