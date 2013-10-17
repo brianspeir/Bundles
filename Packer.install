@@ -68,4 +68,5 @@ sudo bash -c "cat > /etc/paths.d/io.packer.Packer" <<'EOF'
 /Library/Bundles/Packer.bundle/Contents/MacOS
 EOF
 
+packer --version
 echo "Finished."
