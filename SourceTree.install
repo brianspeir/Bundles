@@ -23,7 +23,7 @@ sudo -v
 # Set installation variables.
 NAME="SourceTree.app"
 WHERE="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.7.3.dmg"
+SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.7.4.1.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then

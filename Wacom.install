@@ -1,15 +1,21 @@
 #!/bin/bash
-#
 
-# Wacom.install v6.3.6.4 (2013-Sep-03)
-# This bundle installs Wacom drivers for Mac.
-# http://www.brianspeir.com
 #
 # Copyright (C) 2013 Brian Speir. All rights reserved.
 #
-# Licensed under The BSD 3-Clause License. You may not use this file except
-# in compliance with the License. You may obtain a copy of the License at
-# http://opensource.org/licenses/BSD-3-Clause
+# Licensed under The BSD 3-Clause License (the "License"); you may not use
+# this file except in compliance with the License. You may obtain a copy of
+# the License at http://opensource.org/licenses/BSD-3-Clause.
+#
+#
+
+# Bundles.Wacom (http://github.com/brianspeir/bundles)
+#
+# This bundle installs VirtualBox for Mac.
+# A general-purpose full virtualizer for x86 hardware,
+# targeted at server, desktop and embedded use.
+#
+#
 
 
 # Prompt for a password and extend the time stamp.
@@ -18,7 +24,7 @@ sudo -v
 # Set installation variables.
 NAME="Wacom Tablet Utility.app"
 WHERE="/Applications/Utilities"
-SOURCE="http://cdn.wacom.com/U/drivers/mac/pro/WacomTablet_6.3.6-4.dmg"
+SOURCE="http://cdn.wacom.com/u/drivers/mac/pro/WacomTablet_6.3.7-3.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then
