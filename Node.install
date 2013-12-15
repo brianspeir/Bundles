@@ -24,7 +24,7 @@
 sudo -v
 
 # Set installation variables.
-SOURCE="http://nodejs.org/dist/v0.10.20/node-v0.10.20.pkg"
+SOURCE="http://nodejs.org/dist/v0.10.23/node-v0.10.23.pkg"
 
 # Install.
 echo "Downloading..."
