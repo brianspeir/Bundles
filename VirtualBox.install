@@ -22,7 +22,7 @@
 sudo -v
 
 # Set installation variables.
-SOURCE="http://download.virtualbox.org/virtualbox/4.3.2/VirtualBox-4.3.2-90405-OSX.dmg"
+SOURCE="http://download.virtualbox.org/virtualbox/4.3.4/VirtualBox-4.3.4-91027-OSX.dmg"
 
 # Install.
 echo "Downloading..."
