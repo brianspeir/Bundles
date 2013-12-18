@@ -23,7 +23,7 @@ sudo -v
 # Set installation variables.
 NAME="Packer.bundle"
 WHERE="/Library/Bundles"
-SOURCE="https://dl.bintray.com/mitchellh/packer/0.3.9_darwin_amd64.zip"
+SOURCE="https://dl.bintray.com/mitchellh/packer/0.4.1_darwin_amd64.zip"
 
 # Remove existing installation.
 if [ -s "$WHERE/$NAME" ]; then
