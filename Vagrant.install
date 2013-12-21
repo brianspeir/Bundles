@@ -24,7 +24,7 @@ sudo -v
 # Set installation variables.
 NAME="Vagrant.bundle"
 WHERE="/Library/Bundles"
-SOURCE="https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.0.dmg"
+SOURCE="https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.1.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE/$NAME" ]; then
@@ -60,7 +60,7 @@ sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.3.5</string>
+    <string>1.4.1</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>NSHumanReadableCopyright</key>
