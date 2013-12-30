@@ -24,7 +24,7 @@
 sudo -v
 
 # Set installation variables.
-SOURCE="http://nodejs.org/dist/v0.10.23/node-v0.10.23.pkg"
+SOURCE="http://nodejs.org/dist/v0.10.24/node-v0.10.24.pkg"
 
 # Install.
 echo "Downloading..."
@@ -32,5 +32,7 @@ curl -L# "$SOURCE" -o ${TMPFILE="$(mktemp -t tmp).pkg"}
 echo "Installing..."
 sudo installer -pkg "$TMPFILE" -tgt /
 rm "$TMPDIR"tmp.*
+
+echo "Current Version:" $(node --version)
 
 echo "Finished."
