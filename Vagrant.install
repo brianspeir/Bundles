@@ -24,7 +24,7 @@ sudo -v
 # Set installation variables.
 NAME="Vagrant.bundle"
 WHERE="/Library/Bundles"
-SOURCE="https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.1.dmg"
+SOURCE="https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.3.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE/$NAME" ]; then
