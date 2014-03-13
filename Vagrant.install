@@ -23,7 +23,7 @@ sudo -v
 # Set installation variables.
 NAME="Vagrant.bundle"
 WHERE="/Library/Bundles"
-SOURCE="https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.3.dmg"
+SOURCE="https://dl.bintray.com/mitchellh/vagrant/vagrant_1.5.0.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE/$NAME" ]; then
@@ -59,19 +59,18 @@ sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.4.1</string>
+    <string>1.5.0</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>NSHumanReadableCopyright</key>
-    <string>Copyright © 2010-2013 Mitchell Hashimoto.</string>
+    <string>Copyright © 2010-2014 Mitchell Hashimoto.</string>
 </dict>
 </plist>
 EOF
 sudo chmod -R 755 "$WHERE"/"$NAME"
 
 # Install plug-ins
-# vagrant plugin install vagrant-aws
-# vagrant plugin install vagrant-rackspace
 
-vagrant --version
+echo "Current Version:" $(vagrant --version)
+
 echo "Finished."
