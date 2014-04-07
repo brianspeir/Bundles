@@ -3,9 +3,9 @@
 #
 # Copyright (C) 2014 Brian Speir. All rights reserved.
 #
-# Licensed under The BSD 3-Clause License (the "License"); you may not use
-# this file except in compliance with the License. You may obtain a copy of
-# the License at http://opensource.org/licenses/BSD-3-Clause.
+# Licensed under The BSD 3-Clause License (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a
+# copy of the License at http://opensource.org/licenses/BSD-3-Clause.
 #
 #
 
@@ -23,7 +23,7 @@ sudo -v
 # Set installation variables.
 NAME="Vagrant.bundle"
 WHERE="/Library/Bundles"
-SOURCE="https://dl.bintray.com/mitchellh/vagrant/vagrant_1.5.0.dmg"
+SOURCE="https://dl.bintray.com/mitchellh/vagrant/vagrant_1.5.2.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE/$NAME" ]; then
@@ -59,7 +59,7 @@ sudo bash -c "cat > /Library/Bundles/Vagrant.bundle/Contents/Info.plist" <<'EOF'
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.5.0</string>
+    <string>1.5.2</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>NSHumanReadableCopyright</key>
