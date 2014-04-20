@@ -1,20 +1,24 @@
 #!/bin/bash
-#
 
-# ProjectsFolder.install v(Mountain Lion)
-# This bundle creates an iconed Projects folder in user home.
-# http://www.brianspeir.com
 #
 # Copyright (C) 2013 Brian Speir. All rights reserved.
 #
-# Licensed under The BSD 3-Clause License. You may not use this file except
-# in compliance with the License. You may obtain a copy of the License at
-# http://opensource.org/licenses/BSD-3-Clause
+# Licensed under The BSD 3-Clause License (the "License"); you may not
+# use this file except in compliance with the License. You may obtain
+# a copy of the License at http://opensource.org/licenses/BSD-3-Clause.
+#
+#
+
+# project-folder.install
+#
+# This bundle creates an iconed Projects folder in user home.
+#
+#
 
 
 # Set installation variables.
 WHERE="$HOME"
-SOURCE="https://github.com/brianspeir/Bundles/raw/master/Resources/ProjectsFolder.zip"
+SOURCE="https://github.com/brianspeir/Bundles/raw/master/bundles/resources/projects-folder.zip"
 
 # Install.
 echo "Downloading..."
