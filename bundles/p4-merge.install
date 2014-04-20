@@ -1,15 +1,19 @@
 #!/bin/bash
-#
 
-# P4Merge.install v2012.2/661179
-# This bundle installs Perforce P4Merge: Visual Merge Tool for Mac.
-# http://www.brianspeir.com
 #
 # Copyright (C) 2013 Brian Speir. All rights reserved.
 #
-# Licensed under The BSD 3-Clause License. You may not use this file except
-# in compliance with the License. You may obtain a copy of the License at
-# http://opensource.org/licenses/BSD-3-Clause
+# Licensed under The BSD 3-Clause License (the "License"); you may not
+# use this file except in compliance with the License. You may obtain
+# a copy of the License at http://opensource.org/licenses/BSD-3-Clause.
+#
+#
+
+# p4-merge.install
+#
+# This bundle installs Perforce P4Merge: Visual Merge Tool for Mac.
+#
+#
 
 
 # Prompt for a password and extend the time stamp.
