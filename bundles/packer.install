@@ -52,7 +52,7 @@ sudo bash -c "cat > /Library/Bundles/Packer.bundle/Contents/Info.plist" <<'EOF'
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.3.9</string>
+    <string>0.5.2</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>NSHumanReadableCopyright</key>
@@ -67,5 +67,6 @@ sudo bash -c "cat > /etc/paths.d/io.packer.Packer" <<'EOF'
 /Library/Bundles/Packer.bundle/Contents/MacOS
 EOF
 
-packer --version
+echo "Current Version:" $(packer --version)
+
 echo "Finished."
