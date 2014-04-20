@@ -1,0 +1,69 @@
+#!/bin/bash
+
+#!/bin/bash
+
+#
+# Copyright (C) 2013 Brian Speir. All rights reserved.
+#
+# Licensed under The BSD 3-Clause License (the "License"); you may not
+# use this file except in compliance with the License. You may obtain
+# a copy of the License at http://opensource.org/licenses/BSD-3-Clause.
+#
+#
+
+# Install
+#
+# This automates the installation of Bundles.
+#
+#
+
+# Variables ---------------------------------------------------------- #
+
+SOURCE="https://raw.github.com/brianspeir/Bundles/bundles/master"
+
+echo ""
+echo "Welcome to Bundles."
+echo ""
+echo "Please quit open apps."
+echo ""
+echo "To proceed, enter your password, or type Ctrl-C to abort."
+echo ""
+sudo -v
+
+shopt -s nullglob
+
+if [[ -n "$1" ]]; then
+    # Argument passed from the command line
+    SELECTION="$1"
+else
+    # Argument entered by the user.
+    echo ""
+    echo "To proceed, enter the name of the Bundle to install."
+    echo "Press Return to perform a standard installation."
+    echo ""
+    echo -n "Install: "
+    read 'SELECTION'
+    if [[ -z "$SELECTION" ]]; then
+        # Default argument.
+        SELECTION="canary chrome command-line-tools firefox fonts irc \
+        macports opera projects-folder sourcetree sublime-text vagrant \
+        virtualbox wacom"
+    fi
+fi
+
+# Installer ---------------------------------------------------------- #
+
+for f in $(echo $SELECTION); do
+    echo ""
+    echo "$f bundle..."
+    curl -Ls $SOURCE/$f.install | bash
+done
+
+## Invalidate the user time stamp and require passwords again.
+sudo -k
+
+echo ""
+echo "The installation was successful."
+echo ""
+
+exit
