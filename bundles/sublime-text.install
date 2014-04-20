@@ -1,15 +1,19 @@
 #!/bin/bash
-#
 
-# SublimeText.install v2.0.2 (2221)
-# This bundle installs Google Chrome for Mac.
-# http://www.brianspeir.com
 #
 # Copyright (C) 2013 Brian Speir. All rights reserved.
 #
-# Licensed under The BSD 3-Clause License. You may not use this file except
-# in compliance with the License. You may obtain a copy of the License at
-# http://opensource.org/licenses/BSD-3-Clause
+# Licensed under The BSD 3-Clause License (the "License"); you may not
+# use this file except in compliance with the License. You may obtain
+# a copy of the License at http://opensource.org/licenses/BSD-3-Clause.
+#
+#
+
+# sublime-text.install
+#
+# This bundle installs Sublime Text 2 for Mac.
+#
+#
 
 
 # Prompt for a password and extend the time stamp.
@@ -50,9 +54,6 @@ fi
 curl -L# "$SOURCE" --create-dirs -o "$WHERE"/"$NAME"
 
 # Other -------------------------------------------------------------------- #
-
-# Install color scheme
-# git clone https://github.com/BrianSpeir/Dot-Files/Crayons.tmTheme "$HOME/Library/Application Support/Sublime Text 2/Packages/User/"
 
 # Install Soda Theme colours (replace with personal colors)
 mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
