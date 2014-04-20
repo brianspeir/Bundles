@@ -62,6 +62,8 @@ sudo bash -c "cat > /Library/Bundles/Packer.bundle/Contents/Info.plist" <<'EOF'
 EOF
 sudo chmod -R 755 "$WHERE"/"$NAME"
 
+# Other -------------------------------------------------------------- #
+
 # Tell the tools where they live. Path setting for all users.
 sudo bash -c "cat > /etc/paths.d/io.packer.Packer" <<'EOF'
 /Library/Bundles/Packer.bundle/Contents/MacOS
