@@ -3,7 +3,7 @@
 #!/bin/bash
 
 #
-# Copyright (C) 2013 Brian Speir. All rights reserved.
+# Copyright (C) 2014 Brian Speir. All rights reserved.
 #
 # Licensed under The BSD 3-Clause License (the "License"); you may not
 # use this file except in compliance with the License. You may obtain
@@ -19,7 +19,7 @@
 
 # Variables ---------------------------------------------------------- #
 
-SOURCE="https://raw.github.com/brianspeir/Bundles/bundles/master"
+SOURCE="https://raw.github.com/brianspeir/Bundles/master/bundles"
 
 echo ""
 echo "Welcome to Bundles."
