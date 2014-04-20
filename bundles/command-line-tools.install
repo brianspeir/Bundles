@@ -31,6 +31,8 @@ sudo installer -pkg "$TMPVOL"/*.mpkg -tgt /
 hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
 
+# Opinions ----------------------------------------------------------------- #
+
 # Accept Xcode End User Licensing Agreement.
 defaults write com.apple.dt.Xcode IDELastGMLicenseAgreedTo -string "EA0720"
 defaults write com.apple.dt.Xcode IDEXcodeVersionForAgreedToGMLicense -string "4.6.3"
