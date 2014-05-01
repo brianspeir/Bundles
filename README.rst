@@ -10,4 +10,4 @@ Copy, Paste and Install from the command-line.
 
 .. code-block:: bash
 
-    bash <(curl -s https://raw.github.com/brianspeir/Bundles/master/Install)
+    bash <(curl -s https://raw.githubusercontent.com/brianspeir/Bundles/master/Install)

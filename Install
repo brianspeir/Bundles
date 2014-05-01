@@ -19,7 +19,7 @@
 
 # Variables ---------------------------------------------------------- #
 
-SOURCE="https://raw.github.com/brianspeir/Bundles/master/bundles"
+SOURCE="https://raw.githubusercontent.com/brianspeir/Bundles/master/bundles"
 
 echo ""
 echo "Welcome to Bundles."
