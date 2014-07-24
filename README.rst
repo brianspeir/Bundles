@@ -8,6 +8,6 @@ All this without ever leaving Terminal. Standard installers made better.
 
 Copy, Paste and Install from the command-line.
 
-.. code-block:: bash
+.. code-block:: sh
 
-    bash <(curl -s https://raw.githubusercontent.com/brianspeir/Bundles/master/Install)
+    sh <(curl -s https://raw.githubusercontent.com/brianspeir/Bundles/master/Install.sh)
