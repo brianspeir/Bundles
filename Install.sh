@@ -1,25 +1,24 @@
-#!/bin/bash
-
-#!/bin/bash
+#!/bin/sh
 
 #
-# Copyright (C) 2014 Brian Speir. All rights reserved.
+#  Copyright (C) 2014 Brian Speir. All rights reserved.
 #
-# Licensed under The BSD 3-Clause License (the "License"); you may not
-# use this file except in compliance with the License. You may obtain
-# a copy of the License at http://opensource.org/licenses/BSD-3-Clause.
+#  Licensed under The BSD 3-Clause License (the "License"); you may not
+#  use this file except in compliance with the License. You may obtain
+#  a copy of the License at http://opensource.org/licenses/BSD-3-Clause.
 #
 #
 
-# Install
+#  Install.sh
+#  Bundles
 #
-# Automate the installation of Bundles.
+#  Automate the installation of Bunles.
 #
-#
+
 
 # Variables ---------------------------------------------------------- #
 
-SOURCE="https://raw.githubusercontent.com/brianspeir/Bundles/master/bundles"
+SOURCE="https://raw.githubusercontent.com/brianspeir/Bundles/master/Bundles"
 
 echo ""
 echo "Welcome to Bundles."
