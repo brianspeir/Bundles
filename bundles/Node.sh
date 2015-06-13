@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-#  Copyright (C) 2014 Brian Speir. All rights reserved.
+#  Copyright (C) 2015 Brian Speir. All rights reserved.
 #
 #  Licensed under The BSD 3-Clause License (the "License"); you may not
 #  use this file except in compliance with the License. You may obtain
@@ -20,7 +20,7 @@
 sudo -v
 
 # Set installation variables.
-SOURCE="http://nodejs.org/dist/v0.10.29/node-v0.10.29.pkg"
+SOURCE="http://nodejs.org/dist/v0.12.4/node-v0.12.4.pkg"
 
 # Install.
 echo "Downloading..."

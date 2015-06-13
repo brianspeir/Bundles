@@ -9,10 +9,10 @@
 #
 #
 
-#  Wacom.sh
+#  FirefoxDeveloper.sh
 #  Bundles
 #
-#  This script installs Wacom Drivers for Mac.
+#  This script installs Firefox Developer Edition for Mac.
 #
 
 
@@ -20,9 +20,9 @@
 sudo -v
 
 # Set installation variables.
-NAME="Wacom Tablet Utility.app"
-WHERE="/Applications/Utilities"
-SOURCE="http://cdn.wacom.com/u/productsupport/drivers/mac/professional/WacomTablet_6.3.11-3a.dmg"
+NAME="FirefoxDeveloperEdition.app"
+WHERE="/Applications"
+SOURCE="https://download.mozilla.org/?product=firefox-aurora-latest&os=osx&lang=en-US"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then
@@ -34,17 +34,8 @@ echo "Downloading..."
 curl -L# "$SOURCE" -o ${TMPFILE=$(mktemp -t tmp)}
 echo "Installing..."
 hdiutil attach "$TMPFILE" -nobrowse -quiet -mountpoint ${TMPVOL=/Volumes/$(basename $TMPFILE)}
-sudo installer -pkg "$TMPVOL"/*.pkg -tgt /
+sudo cp -R "$TMPVOL"/"$NAME" "$WHERE"/
 hdiutil detach -quiet "$TMPVOL"
 rm "$TMPFILE"
-
-# Move app to the Utilities folder.
-sudo mv "/Applications/Wacom Tablet.localized/$NAME" "$WHERE"/"$NAME"
-sudo rm -rf "/Applications/Wacom Tablet.localized"
-
-# Disable Internet Plug-Ins
-sudo mkdir -p "/Library/Internet Plug-Ins/disabled" &>/dev/null
-sudo mv "/Library/Internet Plug-Ins/WacomNetscape.plugin" "/Library/Internet Plug-Ins/disabled" &>/dev/null
-sudo mv "/Library/Internet Plug-Ins/WacomTabletPlugin.plugin" "/Library/Internet Plug-Ins/disabled" &>/dev/null
 
 echo "Finished."

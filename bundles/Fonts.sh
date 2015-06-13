@@ -16,28 +16,55 @@
 #
 
 
-# Source Code Pro v1.017 --------------------------------------------------- #
+# Roboto Fonts --------------------------------------------------- #
 
 # Set installation variables.
 WHERE="$HOME/Library/Fonts"
-SOURCE="http://sourceforge.net/projects/sourcecodepro.adobe/files/SourceCodePro_FontsOnly-1.017.zip/download"
+SOURCE="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0B0J8hsRkk91LRjU4U1NSeXdjd1U/RobotoTTF.zip"
 
 # Install.
 echo "Downloading..."
-curl -L# "$SOURCE" | tar -xz --exclude={"TTF/*","*.html","*.txt",.DS_Store} --strip-components 2 -C "$WHERE"
+curl -L# "$SOURCE" | tar -xz --exclude={"EOT/*","SVG/*","TTF/*","WOFF/*","*.html","*.rtf","*.txt",.DS_Store} -C "$WHERE"
 echo "Installing..."
 
 echo "Finished."
 
-# Source Sans Pro v1.050 --------------------------------------------------- #
+
+# Source Code Pro v1.017 --------------------------------------------------- #
 
 # Set installation variables.
 WHERE="$HOME/Library/Fonts"
-SOURCE="http://sourceforge.net/projects/sourcesans.adobe/files/SourceSansPro_FontsOnly-1.050.zip/download"
+SOURCE="https://github.com/adobe-fonts/source-code-pro/archive/1.017R.zip"
 
 # Install.
 echo "Downloading..."
-curl -L# "$SOURCE" | tar -xz --exclude={"TTF/*","*.html","*.txt",.DS_Store} --strip-components 2 -C "$WHERE"
+curl -L# "$SOURCE" | tar -xz --exclude={"EOT/*","SVG/*","TTF/*","WOFF/*","*.html","*.txt",.DS_Store} --strip-components 2 -C "$WHERE"
+echo "Installing..."
+
+echo "Finished."
+
+# Source Sans Pro v2.010 --------------------------------------------------- #
+
+# Set installation variables.
+WHERE="$HOME/Library/Fonts"
+SOURCE="https://github.com/adobe-fonts/source-sans-pro/archive/2.010R-ro/1.065R-it.zip"
+
+# Install.
+echo "Downloading..."
+curl -L# "$SOURCE" | tar -xz --exclude={"EOT/*","SVG/*","TTF/*","WOFF/*","*.html","*.txt",.DS_Store} --strip-components 2 -C "$WHERE"
+echo "Installing..."
+
+echo "Finished."
+
+# Source Serif Pro v1.017 --------------------------------------------------- #
+
+# Set installation variables.
+WHERE="$HOME/Library/Fonts"
+SOURCE="https://github.com/adobe-fonts/source-serif-pro/archive/1.017R.zip"
+
+# Install.
+echo "Downloading..."
+curl -L# "$SOURCE" | tar -xz --exclude={"EOT/*","SVG/*","TTF/*","WOFF/*","*.html","*.txt",.DS_Store} --strip-components 2 -C "$WHERE"
 echo "Installing..."
 
 echo "Finished."

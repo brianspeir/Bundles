@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-#  Copyright (C) 2014 Brian Speir. All rights reserved.
+#  Copyright (C) 2013-2015 Brian Speir. All rights reserved.
 #
 #  Licensed under The BSD 3-Clause License (the "License"); you may not
 #  use this file except in compliance with the License. You may obtain
@@ -22,7 +22,7 @@ sudo -v
 # Set installation variables.
 NAME="SourceTree.app"
 WHERE="/Applications"
-SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_1.9.6.dmg"
+SOURCE="http://downloads.atlassian.com/software/sourcetree/SourceTree_2.0.5.2.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then

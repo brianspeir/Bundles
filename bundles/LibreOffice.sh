@@ -22,7 +22,7 @@ sudo -v
 # Set installation variables.
 NAME="LibreOffice.app"
 WHERE="/Applications"
-SOURCE="http://download.documentfoundation.org/libreoffice/stable/4.2.5/mac/x86/LibreOffice_4.2.5_MacOS_x86.dmg"
+SOURCE="http://download.documentfoundation.org/libreoffice/stable/4.3.2/mac/x86/LibreOffice_4.3.2_MacOS_x86.dmg"
 
 # Remove existing installation.
 if [ -s "$WHERE"/"$NAME" ]; then

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-#  Copyright (C) 2014 Brian Speir. All rights reserved.
+#  Copyright (C) 2013-2015 Brian Speir. All rights reserved.
 #
 #  Licensed under The BSD 3-Clause License (the "License"); you may not
 #  use this file except in compliance with the License. You may obtain
@@ -44,9 +44,9 @@ else
     read 'SELECTION'
     if [[ -z "$SELECTION" ]]; then
         # Default argument.
-        SELECTION="canary chrome command-line-tools firefox fonts irc \
-        macports opera projects-folder sourcetree sublime-text vagrant \
-        virtualbox wacom"
+        SELECTION="Canary Chrome CommandLineTools FirefoxDeveloper \
+        Fonts IRC MacPorts Opera ProjectsFolder SourceTree SublimeText \
+        Vagrant VirtualBox Wacom"
     fi
 fi
 
