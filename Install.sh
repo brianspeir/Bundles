@@ -55,7 +55,7 @@ fi
 for f in $(echo $SELECTION); do
     echo ""
     echo "$f bundle..."
-    curl -Ls $SOURCE/$f.sh | bash
+    curl -Ls $SOURCE/$f.sh | sh
 done
 
 ## Invalidate the user time stamp and require passwords again.
