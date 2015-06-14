@@ -45,7 +45,7 @@ else
     if [[ -z "$SELECTION" ]]; then
         # Default argument.
         SELECTION="Canary Chrome CommandLineTools FirefoxDeveloper \
-        Fonts IRC MacPorts Opera ProjectsFolder SourceTree SublimeText \
+        Fonts IRC MacPorts Opera ProjectsFolder SourceTree SublimeTexts \
         Vagrant VirtualBox Wacom"
     fi
 fi
@@ -55,7 +55,7 @@ fi
 for f in $(echo $SELECTION); do
     echo ""
     echo "$f bundle..."
-    curl -Ls $SOURCE/$f.sh | sh
+    curl -Ls $SOURCE/$f.sh | bash
 done
 
 ## Invalidate the user time stamp and require passwords again.
